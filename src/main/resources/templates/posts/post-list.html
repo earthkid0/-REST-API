@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>고옥들 농장</title>
+    </head>
+    <body>
+    <h1>게시물 목록</h1>
+    <ul th:each="post : ${posts}">
+        <li>
+            <p>제목: <span th:text="${post.title}"></span></p>
+            <p>내용: <span th:text="${post.content}"></span></p>
+            <p>카테고리: <span th:text="${post.category}"></span></p>
+        </li>
+    </ul>
+    <a th:href="@{/posts/create}">Create Post</a>
+    </body>
+</html>
